@@ -1,12 +1,13 @@
 const express = require("express");
 const serverless = require("serverless-http");
-
+const cors = require("cors");
 const blogs = require("../src/blogsData.json");
 const app = express();
 const router = express.Router();
 
 // Middleware
 
+app.use(cors());
 app.use(express.json());
 
 router.get("/", (req, res) => {
